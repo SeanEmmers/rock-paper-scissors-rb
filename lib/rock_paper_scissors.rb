@@ -14,28 +14,29 @@ class RockPaperScissors
       next unless valid_input?(user_input)
       puts "#{winner?(user_input)}"
     }
-
+    
     return end_game_message()
-
   end
 
-  def winner?(u_p)
-    c_p = computer_choice()
-    return winning_action() if u_p == 'rock' && c_p == 'scissors'
-    return winning_action() if u_p == 'paper' && c_p == 'rock'
-    return winning_action() if u_p == 'scissors' && c_p == 'paper'
-    return 'Draw' if u_p == c_p
-    losing_action()
+  private 
+
+  def winner?(u_c)
+    c_c = computer_choice()
+    return winning_action(c_c) if u_c == 'rock' && c_c == 'scissors'
+    return winning_action(c_c) if u_c == 'paper' && c_c == 'rock'
+    return winning_action(c_c) if u_c == 'scissors' && c_c == 'paper'
+    return "\nDraw!" if u_c == c_c
+    losing_action(c_c)
   end
 
-  def winning_action
+  def winning_action(computer_choice)
     @user_wins += 1
-    return 'You win!'
+    return "\nYou Win!\nComputer Picked: #{computer_choice.capitalize}"
   end
 
-  def losing_action
+  def losing_action(computer_choice)
     @computer_wins += 1
-    return 'You Loose'
+    return "\nYou Lose\nComputer Picked: #{computer_choice.capitalize}"
   end
 
   def computer_choice
@@ -44,7 +45,7 @@ class RockPaperScissors
   end
 
   def user_choice
-    puts 'Rock paper or scissors?'
+    puts "\nRock Paper or Scissors?"
     return gets.chomp.downcase.strip
   end
 
