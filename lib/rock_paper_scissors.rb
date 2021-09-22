@@ -3,17 +3,17 @@ class RockPaperScissors
   def initialize  
     @user_wins = 0
     @computer_wins = 0
-    @options = ['rock', 'paper', 'scissors']
+    @options = [:rock, :paper, :scissors]
   end
 
   def play_game 
 
-    loop {
+    loop do
       user_input = user_choice()
       break if end_game?(user_input)
       next unless valid_input?(user_input)
       puts "#{winner?(user_input)}"
-    }
+    end
     
     return end_game_message()
   end
@@ -41,7 +41,7 @@ class RockPaperScissors
 
   def computer_choice
     choice = rand(0..2)
-    return @options[choice]
+    return @options[choice.to_sym]
   end
 
   def user_choice
@@ -54,7 +54,7 @@ class RockPaperScissors
   end
 
   def valid_input?(input)
-    @options.include?(input)
+    @options.include?(input.to_sym)
   end
 
   def end_game_message
