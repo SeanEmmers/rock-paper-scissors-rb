@@ -5,7 +5,7 @@
 - Clone the repo
 - Open irb & require the ruby file
 - Create a new instance of the RockPaperScissors class
-- Call the play_game function on the instance
+- Call the play_game function on that instance
 - Follow the instructions 
 
 
