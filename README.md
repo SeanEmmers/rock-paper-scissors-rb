@@ -8,7 +8,6 @@
 - Call the play_game function on the instance
 - Follow the instructions 
 
-<br/>
 
 ## Design
 
