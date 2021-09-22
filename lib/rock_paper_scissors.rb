@@ -9,30 +9,33 @@ class RockPaperScissors
   def play_game 
 
     loop {
-    user_input = user_choice
-    break if end_game?(user_input)
-    next if valid_input?(user_choice)
-
-    
+      user_input = user_choice()
+      break if end_game?(user_input)
+      next unless valid_input?(user_input)
+      puts "#{winner?(user_input)}"
     }
 
-  end
-
-  def get_input
+    end_game_message()
 
   end
 
-  def winner?(user_pick, computer_pick)
-
+  def winner?(u_p)
+    c_p = computer_choice()
+    return 'You win' if u_p == 'rock' && c_p == 'scissors'
+    return 'You win' if u_p == 'paper' && c_p == 'rock'
+    return 'You win' if u_p == 'scissors' && c_p == 'paper'
+    return 'Draw' if u_p == c_p
+    'You Loose'
   end
 
   def computer_choice
-  
+    choice = rand(0..2)
+    return @options[choice]
   end
 
   def user_choice
     puts 'Rock paper or scissors?'
-    user_input = gets.chomp.downcase
+    return gets.chomp.downcase
   end
 
   def end_game?(input)
@@ -41,6 +44,10 @@ class RockPaperScissors
 
   def valid_input?(input)
     @options.include?(input)
+  end
+
+  def end_game_message
+    puts "Thank you for playing!\n You won: #{@user_wins} times\n Computer won: #{@computer_wins} times"
   end
 
 end
