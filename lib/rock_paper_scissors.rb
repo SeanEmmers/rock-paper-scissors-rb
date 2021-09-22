@@ -69,6 +69,11 @@ class RockPaperScissors
   end
 
   def end_game_message
-    puts "\nThank you for playing!\n\n You won: #{@user_wins} times\n Computer won: #{@computer_wins} times"
+    puts "\nThank you for playing!\n\n You won: #{@user_wins} #{pluralize(@user_wins)}\n Computer won: #{@computer_wins} #{pluralize(@computer_wins)}"
   end
+
+  def pluralize(number)
+    number == 1 ? 'time' : 'times'
+  end
+
 end
