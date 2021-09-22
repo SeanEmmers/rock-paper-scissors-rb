@@ -24,13 +24,16 @@ class RockPaperScissors
   private
 
   def winner?(u_c)
-    c_c = computer_choice
+    c_c = computer_choice.to_s
     return winning_action(c_c) if u_c == 'rock' && c_c == 'scissors'
     return winning_action(c_c) if u_c == 'paper' && c_c == 'rock'
     return winning_action(c_c) if u_c == 'scissors' && c_c == 'paper'
-    return "\nDraw!" if u_c == c_c
 
-    losing_action(c_c)
+    draw_or_lose?(u_c, c_c)
+  end
+
+  def draw_or_lose?(u_c, c_c)
+    u_c == c_c ? "\nDraw" : losing_action(c_c)
   end
 
   def winning_action(computer_choice)
