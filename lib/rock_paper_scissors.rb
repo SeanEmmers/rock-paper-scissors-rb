@@ -32,8 +32,8 @@ class RockPaperScissors
     draw_or_lose?(u_c, c_c)
   end
 
-  def draw_or_lose?(u_c, c_c)
-    u_c == c_c ? "\nDraw" : losing_action(c_c)
+  def draw_or_lose?(user_choice, computer_choice)
+    user_choice == computer_choice ? "\nDraw" : losing_action(computer_choice)
   end
 
   def winning_action(computer_choice)
