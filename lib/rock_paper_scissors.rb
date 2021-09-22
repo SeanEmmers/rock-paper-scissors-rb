@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# The Rock Paper Scissors game
 class RockPaperScissors
   def initialize
     @user_wins = 0
