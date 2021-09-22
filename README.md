@@ -17,3 +17,9 @@ There was three features I wanted to add to the game
 - Score counting that would be displayed at the end
 - Being able to play on repeat instead of just one round
 - Being able to chose when the program would terminate
+
+## Task
+
+I wanted to do a relatively easy task while practising creating DRY and easy to read code using the best techniques I currently know.
+
+Linted with Rubocop, 0 issues.
