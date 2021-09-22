@@ -22,4 +22,4 @@ There was three features I wanted to add to the game
 
 I wanted to do a relatively easy task while practising creating DRY and easy to read code using the best techniques I currently know.
 
-Linted with Rubocop, 0 issues.
+Linted with Rubocop - 0 issues.
