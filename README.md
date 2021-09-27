@@ -11,7 +11,7 @@
 
 ## Design
 
-There was three features I wanted to add to the game
+There was four features I wanted to add to the game
 
 - User input instead of a random choice
 - Score counting that would be displayed at the end
